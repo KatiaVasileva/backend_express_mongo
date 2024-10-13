@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("./middlewares/cors");
 const bodyParser = require("body-parser");
+const userRouter = require("./routes/users");
 
 dotenv.config();
 
@@ -23,6 +24,8 @@ app.get("/", (request, response) => {
     response.status(200);
     response.send("Hello, World!");
 });
+
+app.use(userRouter);
 
 app.listen(PORT, () => {
     console.log(`Сервер запущен по адресу ${API_URL}:${PORT}`);
