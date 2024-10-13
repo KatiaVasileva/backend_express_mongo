@@ -6,9 +6,9 @@ const bookSchema = new mongoose.Schema({
         required: true,
         minLength: 2
     },
-    title: {
+    author: {
         type: String,
-        required: false,
+        required: true,
         minLength: 2
     },
     year: {
