@@ -58,10 +58,4 @@ const deleteUserById = (request, response) => {
     });
 };
 
-module.exports = {
-  getAllUsers,
-  createUser,
-  getUserById,
-  updateUserById,
-  deleteUserById,
-};
+module.exports = { getAllUsers, createUser, getUserById, updateUserById, deleteUserById};
