@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("./middlewares/cors");
+const bodyParser = require("body-parser");
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ mongoose.connect(MONGO_URL).catch((error) => handleError(error));
 const app = express();
 
 app.use(cors);
+app.use(bodyParser.json());
 
 app.get("/", (request, response) => {
     response.status(200);
